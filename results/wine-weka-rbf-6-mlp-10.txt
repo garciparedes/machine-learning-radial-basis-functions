@@ -1,0 +1,204 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H 10
+Relation:     wine_clusterMembership-weka.filters.unsupervised.attribute.ClusterMembership-Wweka.clusterers.EM---I100-N6-X10-max-1-ll-cv1.0E-6-ll-iter1.0E-6-M1.0E-6-K10-num-slots1-S100
+Instances:    178
+Attributes:   7
+              pCluster_0_0
+              pCluster_0_1
+              pCluster_0_2
+              pCluster_0_3
+              pCluster_0_4
+              pCluster_0_5
+              CLASS
+Test mode:    split 66.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+Linear Node 0
+    Inputs    Weights
+    Threshold    0.06127931778911913
+    Node 1    -0.14958299060409241
+    Node 2    -0.2927077458677594
+    Node 3    -0.4077290422251841
+    Node 4    1.100691403764349
+    Node 5    -0.3844661923281502
+    Node 6    -0.17529109605779403
+    Node 7    -0.9971658288780815
+    Node 8    -0.4191511264456019
+    Node 9    0.009022303311024346
+    Node 10    0.7682211256976813
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -0.8920047950447617
+    Attrib pCluster_0_0    0.5733709543076432
+    Attrib pCluster_0_1    0.8996828514440057
+    Attrib pCluster_0_2    0.5136636835874344
+    Attrib pCluster_0_3    0.6157782129009775
+    Attrib pCluster_0_4    0.184178621365334
+    Attrib pCluster_0_5    0.5638592825140947
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -0.8880736922633214
+    Attrib pCluster_0_0    0.6925130450748042
+    Attrib pCluster_0_1    0.6373448709451717
+    Attrib pCluster_0_2    0.6673018604621385
+    Attrib pCluster_0_3    0.38385118539920166
+    Attrib pCluster_0_4    0.32871770641264764
+    Attrib pCluster_0_5    0.769287823888812
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -0.8709240111947018
+    Attrib pCluster_0_0    0.787478609058341
+    Attrib pCluster_0_1    0.4660482603213414
+    Attrib pCluster_0_2    0.7956200363610411
+    Attrib pCluster_0_3    0.23328965707934693
+    Attrib pCluster_0_4    0.40870051987871014
+    Attrib pCluster_0_5    1.00704348005761
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -0.6323477347229413
+    Attrib pCluster_0_0    0.6734655986499499
+    Attrib pCluster_0_1    2.130914616076943
+    Attrib pCluster_0_2    -0.08582269967289306
+    Attrib pCluster_0_3    2.78365303223395
+    Attrib pCluster_0_4    -3.6278299169214625
+    Attrib pCluster_0_5    0.7466515049743232
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -0.9404756997436857
+    Attrib pCluster_0_0    0.7898087137232236
+    Attrib pCluster_0_1    0.46772037376166536
+    Attrib pCluster_0_2    0.7021270787377779
+    Attrib pCluster_0_3    0.2501194349453025
+    Attrib pCluster_0_4    0.4112047512107539
+    Attrib pCluster_0_5    1.0109075520580335
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -0.8854460541385574
+    Attrib pCluster_0_0    0.599516982513934
+    Attrib pCluster_0_1    0.864584419956386
+    Attrib pCluster_0_2    0.5312964029364867
+    Attrib pCluster_0_3    0.5278430263609631
+    Attrib pCluster_0_4    0.2520830438035775
+    Attrib pCluster_0_5    0.5956779090056712
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    0.004521778687441056
+    Attrib pCluster_0_0    -0.6114051345385704
+    Attrib pCluster_0_1    -1.434585869236845
+    Attrib pCluster_0_2    -2.3069372124298893
+    Attrib pCluster_0_3    -1.9403679992417364
+    Attrib pCluster_0_4    7.5805826840591
+    Attrib pCluster_0_5    -1.047938820157224
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -0.957175044775045
+    Attrib pCluster_0_0    0.8578198562253092
+    Attrib pCluster_0_1    0.386164122626447
+    Attrib pCluster_0_2    0.7004264013651778
+    Attrib pCluster_0_3    0.1711901078307483
+    Attrib pCluster_0_4    0.48523967613217434
+    Attrib pCluster_0_5    1.157890714925784
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    -0.9346261138751011
+    Attrib pCluster_0_0    0.5475605368526657
+    Attrib pCluster_0_1    1.2268894255899738
+    Attrib pCluster_0_2    0.4259102679035358
+    Attrib pCluster_0_3    0.7841020363655735
+    Attrib pCluster_0_4    -0.08807462859433042
+    Attrib pCluster_0_5    0.5672055916191487
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -1.0402422771345394
+    Attrib pCluster_0_0    0.9851624334883823
+    Attrib pCluster_0_1    2.2211949057052855
+    Attrib pCluster_0_2    0.4780483587701928
+    Attrib pCluster_0_3    0.7920159055509939
+    Attrib pCluster_0_4    -1.3144857197077788
+    Attrib pCluster_0_5    0.9934662628192565
+Class
+    Input
+    Node 0
+
+
+Time taken to build model: 0.16 seconds
+
+=== Predictions on test split ===
+
+inst#,actual,predicted,error
+1,2,2.063,0.063
+2,3,3.051,0.051
+3,2,2.041,0.041
+4,3,3.051,0.051
+5,3,3.051,0.051
+6,2,2.063,0.063
+7,2,2.063,0.063
+8,3,3.048,0.048
+9,2,1.949,-0.051
+10,2,2.055,0.055
+11,1,1.05,0.05
+12,2,1.923,-0.077
+13,2,2.063,0.063
+14,1,1.05,0.05
+15,2,2.062,0.062
+16,3,3.048,0.048
+17,3,3.048,0.048
+18,3,3.051,0.051
+19,3,3.051,0.051
+20,3,3.049,0.049
+21,3,3.05,0.05
+22,1,1.05,0.05
+23,1,1.05,0.05
+24,1,1.474,0.474
+25,3,3.051,0.051
+26,1,1.05,0.05
+27,3,3.051,0.051
+28,1,1.05,0.05
+29,2,2.094,0.094
+30,1,1.05,0.05
+31,2,1.928,-0.072
+32,1,1.05,0.05
+33,2,2.063,0.063
+34,1,1.05,0.05
+35,2,1.952,-0.048
+36,1,1.05,0.05
+37,3,3.049,0.049
+38,1,1.05,0.05
+39,3,3.048,0.048
+40,2,2.063,0.063
+41,3,3.048,0.048
+42,1,1.05,0.05
+43,3,3.048,0.048
+44,3,3.049,0.049
+45,3,3.048,0.048
+46,1,1.05,0.05
+47,1,1.05,0.05
+48,2,1.928,-0.072
+49,1,1.05,0.05
+50,2,2.062,0.062
+51,3,3.048,0.048
+52,1,1.05,0.05
+53,1,1.05,0.05
+54,2,1.925,-0.075
+55,2,1.903,-0.097
+56,1,1.032,0.032
+57,2,2.062,0.062
+58,2,2.061,0.061
+59,3,3.051,0.051
+60,3,3.051,0.051
+61,3,3.048,0.048
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0.01 seconds
+
+=== Summary ===
+
+Correlation coefficient                  0.9965
+Mean absolute error                      0.0617
+Root mean squared error                  0.0822
+Relative absolute error                  8.6017 %
+Root relative squared error              9.8339 %
+Total Number of Instances               61

@@ -44,6 +44,39 @@
 		\paragraph{}
 		[TODO ]
 
+		\csvreader[
+		  longtable=| c | c |,
+		  table head=\hline\bfseries \# Clusters &\bfseries Tasa de Error \\\hline,
+			table foot= \caption{[TODO]}\label{table:so-e1}\\,
+		  late after line=\\,
+		  late after last line=\\\hline,
+		  before reading={\catcode`\#=12},after reading={\catcode`\#=6}
+		]{../results/csv/wine-error-rbf-n.csv}{1=\k,2=\error}{\k & \error}
+
+		\paragraph{}
+		[TODO ]
+
+		\begin{figure}
+			\begin{center}
+				\begin{tikzpicture}
+					\begin{axis}[
+						% only scale the axis, not the axis including the ticks and labels
+						scale only axis=true,
+						% set `width' and `height' to the desired values
+						width=0.9\textwidth,
+						height=0.3\textwidth,
+						]
+						\addplot table [x=k, y=error, col sep=comma] {../results/csv/wine-error-rbf-n.csv};
+					\end{axis}
+				\end{tikzpicture}
+			\end{center}
+			\caption{[TODO ]}
+			\label{plot:sol-e1}
+		\end{figure}
+
+		\paragraph{}
+		[TODO ]
+
 %-----------------------------
 %	Bibliographic references
 %-----------------------------
