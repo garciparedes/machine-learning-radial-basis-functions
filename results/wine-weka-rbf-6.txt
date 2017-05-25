@@ -1,0 +1,117 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.RBFNetwork -B 6 -S 1 -R 1.0E-8 -M -1 -W 0.1
+Relation:     wine-train
+Instances:    119
+Attributes:   14
+              Alcohol
+              Malic acid
+              Ash
+              Alcalinity of ash
+              Magnesium
+              Total phenols
+              Flavanoids
+              Nonflavanoid phenols
+              Proanthocyanins
+              Color intensity
+              Hue
+              OD280/OD315 of diluted wines
+              Proline
+              CLASS
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+Radial basis function network
+(Linear regression applied to K-means clusters as basis functions):
+
+
+Linear Regression Model
+
+CLASS =
+
+     -0.2261 * pCluster_0_0 +
+      0.3114 * pCluster_0_1 +
+     -0.0947 * pCluster_0_2 +
+      1.0461 * pCluster_0_3 +
+     -0.9777 * pCluster_0_4 +
+     -0.0284 * pCluster_0_5 +
+      1.9671
+
+Time taken to build model: 0.01 seconds
+
+=== Predictions on test set ===
+
+inst#,actual,predicted,error
+1,2,1.957,-0.043
+2,3,2.4,-0.6
+3,2,1.933,-0.067
+4,2,1.939,-0.061
+5,3,3.012,0.012
+6,2,1.939,-0.061
+7,2,1.741,-0.259
+8,2,1.873,-0.127
+9,1,1.019,0.019
+10,1,0.991,-0.009
+11,1,0.989,-0.011
+12,1,0.989,-0.011
+13,1,1.114,0.114
+14,2,1.741,-0.259
+15,2,1.816,-0.184
+16,1,0.989,-0.011
+17,2,2.078,0.078
+18,2,1.907,-0.093
+19,2,1.822,-0.178
+20,2,2.278,0.278
+21,1,0.989,-0.011
+22,3,3.013,0.013
+23,3,3.013,0.013
+24,1,0.989,-0.011
+25,1,0.989,-0.011
+26,2,1.741,-0.259
+27,3,2.843,-0.157
+28,1,0.989,-0.011
+29,2,1.829,-0.171
+30,2,1.931,-0.069
+31,2,1.902,-0.098
+32,1,0.989,-0.011
+33,1,0.989,-0.011
+34,3,3.013,0.013
+35,2,1.937,-0.063
+36,3,3.013,0.013
+37,1,0.989,-0.011
+38,3,2.788,-0.212
+39,3,3.013,0.013
+40,2,1.938,-0.062
+41,2,1.51,-0.49
+42,1,0.989,-0.011
+43,1,0.989,-0.011
+44,3,2.282,-0.718
+45,2,1.872,-0.128
+46,2,2.126,0.126
+47,2,1.942,-0.058
+48,2,1.744,-0.256
+49,2,1.812,-0.188
+50,2,1.789,-0.211
+51,2,1.837,-0.163
+52,1,0.989,-0.011
+53,2,1.86,-0.14
+54,3,3.013,0.013
+55,2,1.928,-0.072
+56,3,3.013,0.013
+57,2,1.872,-0.128
+58,1,0.989,-0.011
+59,2,1.836,-0.164
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.01 seconds
+
+=== Summary ===
+
+Correlation coefficient                  0.9743
+Mean absolute error                      0.1121
+Root mean squared error                  0.1803
+Relative absolute error                 21.8621 %
+Root relative squared error             25.8689 %
+Total Number of Instances               59
