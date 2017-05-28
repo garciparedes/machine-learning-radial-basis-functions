@@ -48,8 +48,7 @@
 		  longtable=| c | c |,
 		  table head=\hline\bfseries \# Clusters &\bfseries Tasa de Error \\\hline,
 			table foot= \caption{[TODO]}\label{table:so-e1}\\,
-		  late after line=\\,
-		  late after last line=\\\hline,
+		  late after line=\\\hline,
 		  before reading={\catcode`\#=12},after reading={\catcode`\#=6}
 		]{../results/csv/wine-error-rbf-n.csv}{1=\k,2=\error}{\k & \error}
 
@@ -76,6 +75,22 @@
 
 		\paragraph{}
 		[TODO ]
+
+
+		\begin{table}
+			\centering
+			\small
+			\begin{tabu}{ | c | c | }
+				\hline
+				\multicolumn{2}{ | c | }{RBF $K$-centros + MLP 10} \\ \hline
+				\multirow{2}{*}{Datos}& Tasa de Error ($K=$) \\ \cline{2-2}
+															& \emph{6} \\ \hline
+				Pruebae								& $0.016393442623$	\\
+				\hline
+			\end{tabu}
+			\caption{[TODO ]}
+			\label{table:e3}
+		\end{table}
 
 %-----------------------------
 %	Bibliographic references
