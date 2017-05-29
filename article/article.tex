@@ -21,7 +21,7 @@
 %-----------------------------
 
 	\begin{abstract}
-		\noindent [TODO ]
+		\noindent En este documento se describen las redes neuronales formada por funciones de base radial. Además, se realiza un experimento sobre el conjunto de datos \emph{Wine} para comprobar el número de clusters optimo apra este conjunto de datos. Posteriormente se utilizan las funciones de base radial en combinación con un perceptrón multicapa. Finalmente se discuten los resultados de los distintos experimentos.
 	\end{abstract}
 
 %-----------------------------
@@ -36,24 +36,33 @@
 		\label{sec:radial-basis-functions}
 
 			\paragraph{}
-			[TODO ]
+			La redes neuronales con funciones de base radial son una estrategia de aprendizaje automático basada en medidas de distancia como valor de bondad. Utilizan una estructura básica de 3 capas (aunque se puede ampliar a más capas) siendo la primera (capa de entrada) una capa sin procesado compuesta por una neurona por atributo de entrada.
+
+			\paragraph{}
+			La capa oculta está formada por funciones de base radial, que indican la medida de cercanía de las instancias a un determinado punto. La capa de salida está formada por funciones de activación. El aprendizaje de este tipo de redes se basa en la corrección de los pesos de las funciones de activación en la capa de salida así como la modificación de los centros en las funciones de base radial de la capa oculta.
+
+			\paragraph{}
+			Existen distintas funciones de base radial que se pueden utilizar en este tipo de redes neuronales. Sin embargo, la característica principal que deben poseer es la de maximizar su valor conforme la instancia a examinar se asemeje al centro del cluster.
 
 	\section{Experimentos sobre Wine Dataset}
 	\label{sec:e1}
 
 		\paragraph{}
-		[TODO ]
+		El conjunto de datos utilizado para los experimentos que se describirán en esta sección es \textbf{Wine Data Set} \cite{dataset:wine}, compuesto por \textbf{178 instancias}. Dichas instancias contienen \textbf{12 atributos} de carácter númerico. La \textbf{clase de destino es de carácter numérico}. Sin embargo, en este caso es de tipo entero, por lo que puede ser vista como una variable categórica. En cuanto a la metodología experimental, se ha seguido una extrategia de \textbf{HoldOut} con particionamiento de los datos de manera que $\frac{2}{3}$ son utilizados en la fase de entrenamiento y $\frac{1}{3}$ en la de test.
+
+		\paragraph{}
+		El objetivo de este experimento es la búsqueda del número óptimo de clusters o centros a utilizar sobre el conjunto de datos \emph{Wine} para la estrategia de aprendizaje automático basada en \emph{Funciones de Base Radial (RBF)}. Una vez obtenido el valor óptimo se utilizará dicha red (la capa oculta) como preprocesamiento de la entrada para después clasificar las instancias mediante un \emph{Perceptrón Multicapa} con 10 neuronas en la capa oculta.
 
 		\csvreader[
 		  longtable=| c | c |,
 		  table head=\hline\bfseries \# Clusters &\bfseries Tasa de Error \\\hline,
-			table foot= \caption{[TODO]}\label{table:so-e1}\\,
+			table foot= \caption{Tasas de error obtenidas para el experimento de Holdout sobre el conjunto de datos \emph{Wine} mediante el uso de \emph{Funciones de Base Radial (RBF)} con distinto número de clusters}\label{table:sol-e1}\\,
 		  late after line=\\\hline,
 		  before reading={\catcode`\#=12},after reading={\catcode`\#=6}
 		]{../results/csv/wine-error-rbf-n.csv}{1=\k,2=\error}{\k & \error}
 
 		\paragraph{}
-		[TODO ]
+		Los resultados obtenidos durante la fase de búsqueda del número óptimo de centros o clusters para la red compuesta por funciones de base radial se muestra de manera tabular en la tabla \ref{table:sol-e1}. También se ha incluido una representación gráfica de dichos resultados para facilitar su comparación, esto se muestra en la figura \ref{plot:sol-e1}. Tal y como se puede apreciar, el valor óptimo es \textbf{6 centros}. Algo a destacar es el caso de 6 centros, que obtiene tasas de error muy elevadas. La razón puede ser debida a que el número de clases de destino también está formada por 3 categorías por lo cual no tiene centros de holgura para realizar combinaciones de los mismos en la capa de salida. En cuanto a los resultados mayores que 3, en el resto de casos los resultados son muy aceptables, cercanos al óptimo encontrado (6 centros).
 
 		\begin{figure}
 			\begin{center}
@@ -69,12 +78,18 @@
 					\end{axis}
 				\end{tikzpicture}
 			\end{center}
-			\caption{[TODO ]}
+			\caption{Tasas de error obtenidas para el experimento de Holdout sobre el conjunto de datos \emph{Wine} mediante el uso de \emph{Funciones de Base Radial (RBF)} con distinto número de clusters}
 			\label{plot:sol-e1}
 		\end{figure}
 
 		\paragraph{}
-		[TODO ]
+		El siguiente paso ha sido utilizar dicho valor para crear una estructura de red neuronal compuesta de 2 capas ocultas. La primera de ellas utiliza funciones de base radial mientras que la segunda está formada por funciones no lineales con función de activación (por ser un perceptrón multicapa). Por tanto, la estructura de la red es \textbf{12-6-10-1} ya que se ha utilizado.
+
+		\paragraph{}
+		La razón de que la capa de entrada esté compuesta por 12 neuronas se debe a que es el número de atributos de entrada, la primera capa oculta está compuesta por 6 neuronas con función de base radial, la segunda capa oculta por 10 neuronas de tipo perceptrón y la capa de salida está formada por una única neurona. Por lo tanto, el modelo actua como una regressión. La razón de que el experimento se haya realizado así es poder calcular la tasa de error mediante el error relativo de manera manual. Para ello se ha utilizado un script escrito en Matlab al cual se puede acceder a través de \url{https://gist.github.com/garciparedes/01f6c49054d26a8122e96f349f59b146}
+
+		\paragraph{}
+		La construcción se ha realizado utilizando la suite de aprendizaje automático \emph{WEKA} mediante el apoyo en el filtro de entrada \texttt{ClusterMembership}(\url{http://weka.sourceforge.net/doc.stable/weka/filters/unsupervised/attribute/ClusterMembership.html}), que indica el grado de pertenencia de los atributos de entrada a los centros prefijados, de manera que actua de manera muy similar al algoritmo de aprendizaje no supervisado \texttt{k-means}.
 
 
 		\begin{table}
@@ -88,9 +103,13 @@
 				Pruebae								& $0.016393442623$	\\
 				\hline
 			\end{tabu}
-			\caption{[TODO ]}
-			\label{table:e3}
+			\caption{Tasa de error obtenida para el experimento de Holdout sobre el conjunto de datos \emph{Wine} mediante el uso de \emph{Funciones de Base Radial (RBF)} combinadas con un \emph{Perceptrón Multicapa} con 10 neuronas en la capa oculta}
+			\label{table:sol-e2}
 		\end{table}
+
+		\paragraph{}
+		Los resultados obtenidos tras la realización del experimento descrito se muestran en la tabla \ref{table:sol-e2}. Tal y como se puede apreciar, la tasa de error es igual a la obtenida únicamente mediante el uso de funciones de base radial (no hay mejora), por tanto, se cree que una implementación más sencilla obviando el uso del Perceptrón Multicapa es una solución más acertada en este caso. Además, las tasas de error obtenidas mediante el uso de este son muy bajas.
+
 
 %-----------------------------
 %	Bibliographic references
@@ -98,6 +117,7 @@
 	\nocite{subject:taa}
 	\nocite{garciparedes:machine-learning-radial-basis-functions}
 	\nocite{dataset:wine}
+	\nocite{tool:weka}
   \bibliographystyle{alpha}
   \bibliography{bib/bib}
 
